@@ -1,0 +1,23 @@
+[
+    {
+        "label": "新闻资讯",
+        "link": "./#/news",
+        "status": 1,
+        "key": "news",
+        "hasChildren": false
+    },
+    {
+        "label": "干货资料",
+        "link": "./#/awesome",
+        "status": 1,
+        "key": "awesome",
+        "hasChildren": false
+    },
+    {
+        "label": "休闲分享",
+        "link": "./#/pvx",
+        "status": 1,
+        "key": "pvx",
+        "hasChildren": false
+    }
+]
