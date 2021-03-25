@@ -1,6 +1,6 @@
 <template>
     <div class="v-index">
-        <div class="m-index-search">
+        <!-- <div class="m-index-search">
             <el-input
                 class="u-input"
                 v-model="search"
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

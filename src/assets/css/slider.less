@@ -1,0 +1,73 @@
+@import './slick.less';
+.m-slider {
+    .mb(20px) !important;
+    .h(300px);
+    background-color:@bg-black;
+    box-shadow:0 0 3px rgba(0,0,0,.2);
+    .el-carousel__container{
+        .h(100%);
+    }
+    // border:1px solid @border-hr;
+    .r(4px);
+    overflow: hidden;
+
+    .u-slider{
+        .h(100%);
+        .pr;
+        overflow: hidden;
+    }
+
+    .u-pic {
+        .db;
+        .size(100%);
+        .pr;
+        .h(100%);
+        img {
+            .h(100%);
+            .auto(x);
+            .db;
+            .r(4px);
+            max-width: none;
+            .pa;top:0;left:50%;transform: translateX(-50%);
+        }
+        .r(4px);
+    }
+}
+@media screen and (max-width: @phone) {
+    .m-slider {
+        // .none;
+
+        .h(150px);
+        .el-carousel__container{
+            // .h(auto);
+        }
+
+        .el-carousel__indicators{.none;}
+        .u-pic {
+        }
+    }
+}
+.slick-track,.slick-list{
+    .h(100%);
+}
+.slick-slide > div{
+    .h(100%);
+}
+.slick-dots{
+    bottom:10px;
+}
+.slick-dots li.slick-active button:before{
+    color:#fff;
+}
+.slick-arrow{
+    .z(1);
+}
+.slick-prev{
+    left:10px;
+}
+.slick-next{
+    right:30px;
+}
+.slick-prev:before, .slick-next:before{
+    .fz(40px);
+}
