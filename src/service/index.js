@@ -1,4 +1,4 @@
-import { $server,$old_server,$team } from "./axios";
+import { $server, $old_server, $team } from "./axios";
 
 function getNews(type, limit = 5) {
     return $server
