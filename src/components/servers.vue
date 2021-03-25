@@ -30,6 +30,7 @@
                     <!-- <span class="u-myserver" v-if="server == item.serverName"><i class="el-icon-star-on"></i></span> -->
                 </div>
             </div>
+            <div class="u-placeholder">⏰ Coming soon...</div>
         </div>
     </div>
 </template>
@@ -53,15 +54,19 @@ export default {
             }
         },
     },
-    methods: {},
-    mounted: function() {
-        getServers().then((data) => {
-            data.forEach((item) => {
-                if (item.serverName == item.mainServer) {
-                    this.data.push(item);
-                }
+    methods: {
+        init : function (){
+            getServers().then((data) => {
+                data.forEach((item) => {
+                    if (item.serverName == item.mainServer) {
+                        this.data.push(item);
+                    }
+                });
             });
-        });
+        }
+    },
+    mounted: function() {
+        // this.init()
     },
     components: {},
 };

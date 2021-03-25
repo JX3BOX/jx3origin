@@ -16,19 +16,6 @@
                     <em>微信公众号：</em>
                     <b>JX3BOX</b>
                 </span>
-                <!-- <span class="u-item" v-if="data && data.length">
-                    <em>今日头条：</em>
-                    <span v-for="(item, i) in data" :key="i">
-                        <a
-                            :href="item.link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            :style="{ color: item.color }"
-                            :class="{ isHighlight: !!item.color }"
-                            >{{ item.title }}
-                        </a>
-                    </span>
-                </span> -->
             </div>
         </div>
         <div class="m-daily-content">
@@ -40,7 +27,8 @@
                         <th>项目</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody><tr><td colspan="3"><div class="u-placeholder">❤️ 江湖又见，不负初心</div></td></tr></tbody>
+                <!-- <tbody>
                     <tr v-for="(item, i) in daily" :key="i">
                         <td>{{ item.type }}</td>
                         <td>{{ item.zone }}</td>
@@ -77,7 +65,7 @@
                             </el-tooltip>
                         </td>
                     </tr>
-                </tbody>
+                </tbody> -->
             </table>
         </div>
     </div>
@@ -155,14 +143,14 @@ export default {
     mounted: function() {
         this.server = this.default_server;
         this.initDate();
-        this.loadDaily();
+        // this.loadDaily();
         // this.loadMeirentu();
     },
-    watch: {
-        server: function(val) {
-            val && this.loadMeirentu();
-        },
-    },
+    // watch: {
+    //     server: function(val) {
+    //         val && this.loadMeirentu();
+    //     },
+    // },
 };
 </script>
 

@@ -3,7 +3,7 @@
         <div class="m-price-header m-sideblock-header">
             <i class="el-icon-s-marketing"></i
             ><a class="u-title" href="/app/price" target="_blank">金价走势</a>
-            <el-select
+            <!-- <el-select
                 class="u-select"
                 v-model="server"
                 filterable
@@ -17,12 +17,12 @@
                     :value="item"
                 >
                 </el-option>
-            </el-select>
+            </el-select> -->
             <a href="/app/price" class="u-more" title="查看更多" target="_blank"
                 ><i class="el-icon-more"></i
             ></a>
         </div>
-        <div class="m-price-content" v-if="data">
+        <!-- <div class="m-price-content" v-if="data">
             <el-row :gutter="10">
                 <el-col :span="8" v-for="(item, i) in data" :key="i"
                     ><div class="u-item">
@@ -39,7 +39,8 @@
         </div>
         <div class="m-price-null" v-else>
             暂无数据
-        </div>
+        </div> -->
+        <div class="u-placeholder">💖 你和你的小伙伴正在测试服快乐地白嫖呢~ <br>赶紧该干嘛干嘛(#^.^#)  </div>
     </div>
 </template>
 
@@ -112,7 +113,7 @@ export default {
     },
     mounted: function() {},
     created: function() {
-        this.install();
+        // this.install();
     },
     components: {},
 };

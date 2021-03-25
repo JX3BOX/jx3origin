@@ -1,7 +1,8 @@
-import { $spider, $next,$team } from "./axios";
+import { $spider, $team, axios } from "./axios";
+import { __server } from "@jx3box/jx3box-common/data/jx3box.json";
 
 function getDaily(date) {
-    return $team({mute:true}).get("/xoyo/daily/task", {
+    return $team({ mute: true }).get("/xoyo/daily/task", {
         params: {
             date: date, //int,时间戳，单位秒
         },
@@ -9,8 +10,16 @@ function getDaily(date) {
 }
 
 function getGameNews() {
-    return $spider.get("/jx3news").then((res) => {
-        return res.data;
+    // return $spider.get("/jx3news").then((res) => {
+    //     return res.data;
+    // });
+
+    return axios.get(__server + "post/list", {
+        params: {
+            type: "bbs",
+            subtype: 6,
+            client: "origin",
+        },
     });
 }
 
@@ -23,22 +32,6 @@ function getServers() {
 function getPrice() {
     return $spider.get("/jx3price");
 }
-
-// const md5 = require("js-md5");
-// function getPrice() {
-//     let time = ~~(Date.now() / 1000);
-//     let token = md5(time + "secret");
-//     return axios
-//         .get("https://box.arkwish.com/api/gold", {
-//             params: {
-//                 access_token: token,
-//                 ts: time,
-//             },
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//         });
-// }
 
 // 美人图
 function getMeirentu(server = "蝶恋花") {
