@@ -6,7 +6,7 @@
             <div class="m-main">
                 <div class="m-primary">
                     <live />
-                    <bigbang />
+                    <slider />
                     <event />
                     <box />
                     <guide />
@@ -17,11 +17,13 @@
 
                     <div class="m-left">
                         <daily />
+                        <jx3code />
                         <gamenews />
                         <servers />
                         <price />
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
+                        
                     </div>
 
                     <div class="m-right">
@@ -48,13 +50,14 @@
 import Bg from "@/components/bg/Bg.vue";
 import box from "@/components/box.vue";
 import notice from "@/components/notice.vue";
-import bigbang from "@/components/bigbang.vue";
+import slider from "@/components/slider.vue";
 import event from "@/components/event.vue";
 import live from "@/components/live.vue";
 import contact from "@/components/contact.vue";
 import activity from "@/components/activity.vue";
 
 import daily from "@/components/daily.vue";
+import jx3code from "@/components/jx3code.vue";
 import gamenews from "@/components/gamenews.vue";
 import servers from "@/components/servers.vue";
 import price from "@/components/price.vue";
@@ -86,12 +89,13 @@ export default {
         bg: Bg,
         box,
         notice,
-        bigbang,
+        slider,
         event,
         live,
         contact,
 
         daily,
+        jx3code,
         gamenews,
         servers,
         price,

@@ -20,9 +20,9 @@
 <script>
 import { buildTarget, resolveImagePath } from "@jx3box/jx3box-common/js/utils";
 import { getNews } from "@/service/index";
-
+import $ from 'jquery'
 export default {
-    name: "bigbang",
+    name: "slider",
     props: [],
     data: function() {
         return {
@@ -48,11 +48,11 @@ export default {
             });
             this.data = data;
         }).then(() => {
-            $("#m-home-slider").slick({
-                infinite: true,
-                autoplay: true,
-                dots: true,
-            });
+            // $("#m-home-slider").slick({
+            //     infinite: true,
+            //     autoplay: true,
+            //     dots: true,
+            // });
         })
     },
     updated: function() {

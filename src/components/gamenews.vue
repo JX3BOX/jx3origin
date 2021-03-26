@@ -16,12 +16,12 @@
         </div>
         <ul class="m-sideblock-list u-list" v-if="data.length">
             <li v-for="(item, i) in data" :key="i">
-                <em>{{ item.post.post_date | dateFormat }}</em>
+                <em>{{ item.created_at | dateFormat }}</em>
                 <a
-                    :href="item.post.ID | linkFormat"
+                    :href="item.link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >{{ item.post.post_title }}</a
+                    >{{ item.title }}</a
                 >
             </li>
         </ul>
@@ -29,8 +29,9 @@
 </template>
 
 <script>
-import { getGameNews } from "@/service/spider";
+import { getNews } from "@/service/cms";
 import { getLink } from "@jx3box/jx3box-common/js/utils";
+import { simpleDate } from "@/utils/dateFormat.js";
 export default {
     name: "gamenews",
     props: [],
@@ -43,24 +44,15 @@ export default {
     methods: {},
     filters: {
         dateFormat: function(val) {
-            let month = new Date(val).getMonth() + 1;
-            let date = new Date(val).getDate();
-            return month + "-" + date;
-            // return val.replace('/','-')
+            return simpleDate(new Date(val));
         },
         linkFormat: function(val) {
-            // if(val.startsWith('/')){
-            //     return 'https://jx3.xoyo.com' + val
-            // }else{
-            //     return val
-            // }
-            return getLink('bbs',val);
+            return getLink("bbs", val);
         },
     },
     created: function() {
-        getGameNews().then((res) => {
-            console.log(res.data.data);
-            this.data = res.data.data.list.slice(0, 5);
+        getNews().then((res) => {
+            this.data = res.data.data;
         });
     },
     components: {},

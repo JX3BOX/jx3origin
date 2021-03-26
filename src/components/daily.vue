@@ -27,7 +27,13 @@
                         <th>项目</th>
                     </tr>
                 </thead>
-                <tbody><tr><td colspan="3"><div class="u-placeholder">❤️ 江湖又见，不负初心</div></td></tr></tbody>
+                <tbody><tr><td colspan="3">
+                    <div class="u-placeholder">
+                        <p>❤️ 江湖又见，不负初心</p>
+                        <p>魔盒怀旧服交流群：<a href="https://jq.qq.com/?_wv=1027&k=mONxoPba">590349918</a></p>
+                        <p>官方怀旧服交流群：<a href="https://jq.qq.com/?_wv=1027&k=lBwsZ1aM">1061529946</a></p>
+                    </div>
+                </td></tr></tbody>
                 <!-- <tbody>
                     <tr v-for="(item, i) in daily" :key="i">
                         <td>{{ item.type }}</td>
@@ -72,7 +78,6 @@
 </template>
 
 <script>
-import { getNews } from "@/service/index";
 import { getDaily } from "@/service/spider";
 import { getMeirentu } from "@/service/spider";
 import servers from "@jx3box/jx3box-data/data/server/server_cn.json";
