@@ -53,6 +53,12 @@ module.exports = {
                 "onProxyReq": function (request) {
                     request.setHeader("origin", "");
                 }
+            },
+            "/xoyo/daily":{
+                "target": "https://team.api.jx3box.com",
+                "onProxyReq": function (request) {
+                    request.setHeader("origin", "");
+                }
             }
         },
         disableHostCheck: true

@@ -23,7 +23,6 @@
                         <price />
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
-                        
                     </div>
 
                     <div class="m-right">

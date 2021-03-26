@@ -19,8 +19,7 @@
 
 <script>
 import { buildTarget, resolveImagePath } from "@jx3box/jx3box-common/js/utils";
-import { getNews } from "@/service/index";
-import $ from 'jquery'
+import { getSliders } from "@/service/cms";
 export default {
     name: "slider",
     props: [],
@@ -41,18 +40,19 @@ export default {
         },
     },
     methods: {},
-    created: function() {
-        getNews("slider", 10).then((data) => {
+    mounted: function() {
+        getSliders("slider", 10).then((res) => {
+            let data = res.data.data
             data.forEach((item) => {
                 item.img = resolveImagePath(item.img);
             });
             this.data = data;
         }).then(() => {
-            // $("#m-home-slider").slick({
-            //     infinite: true,
-            //     autoplay: true,
-            //     dots: true,
-            // });
+            $("#m-home-slider").slick({
+                infinite: true,
+                autoplay: true,
+                dots: true,
+            });
         })
     },
     updated: function() {
