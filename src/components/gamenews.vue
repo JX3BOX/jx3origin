@@ -51,7 +51,7 @@ export default {
         },
     },
     created: function() {
-        getNews().then((res) => {
+        getNews('game',5).then((res) => {
             this.data = res.data.data;
         });
     },

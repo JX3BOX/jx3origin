@@ -122,17 +122,20 @@
 
 <script>
 import _ from "lodash";
-import origin from "@jx3box/jx3box-data/data/box/box.json";
-const KEY = "boxmatrix";
+
+// BOX设置
+import origin from "@jx3box/jx3box-data/data/box/box_origin.json";
+const KEY = "boxmatrix_origin";
 const default_data = [];
 _.each(origin, (val, uuid) => {
     default_data.push(origin[uuid]);
 });
-const default_lf = ["database", "team", "j3pz"];
+const default_lf = ["database", "team"];
 let default_order = [];
 _.each(default_data, (item) => {
     default_order.push(item.uuid);
 });
+
 import { buildTarget } from "@jx3box/jx3box-common/js/utils";
 import { __imgPath } from "@jx3box/jx3box-common/data/jx3box.json";
 import draggable from "vuedraggable";

@@ -33,6 +33,7 @@ export default {
             return buildTarget();
         },
         player_status: function() {
+            return false
             return (
                 ~~this.$store.state.config.index_live_status ||
                 ~~this.$store.state.config.index_video_status

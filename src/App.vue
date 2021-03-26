@@ -9,11 +9,12 @@
                     <slider />
                     <event />
                     <box />
-                    <guide />
+                    <!-- <guide /> -->
                     <!-- TODO:表情+骚话 -->
+                    <topic />
                     <newpost />
                     <!-- TODO:剑三直播 -->
-                    <team />
+                    <!-- <team /> -->
 
                     <div class="m-left">
                         <daily />
@@ -27,14 +28,15 @@
 
                     <div class="m-right">
                         <notice />
-                        <cjrank />
-                        <macrorank />
-                        <jx3datrank />
+                        <recommend />
+                        <!-- <cjrank /> -->
+                        <!-- <macrorank /> -->
+                        <!-- <jx3datrank /> -->
                         <!-- TODO:DPS天梯 -->
-                        <wikirank />
-                        <collectionrank />
-                        <examrank />
-                        <namespacerank />
+                        <!-- <wikirank /> -->
+                        <!-- <collectionrank /> -->
+                        <!-- <examrank /> -->
+                        <!-- <namespacerank /> -->
                         <contact />
                     </div>
 
@@ -61,17 +63,19 @@ import gamenews from "@/components/gamenews.vue";
 import servers from "@/components/servers.vue";
 import price from "@/components/price.vue";
 
-import macrorank from "@/components/rank_macro.vue";
-import jx3datrank from "@/components/rank_jx3dat.vue";
-import examrank from "@/components/rank_exam.vue";
-import wikirank from "@/components/rank_knowledges.vue";
-import cjrank from "@/components/rank_achievements.vue";
-import collectionrank from "@/components/rank_collections.vue";
-import namespacerank from "@/components/rank_namespaces.vue";
+import recommend from "@/components/recommend.vue";
+// import macrorank from "@/components/rank_macro.vue";
+// import jx3datrank from "@/components/rank_jx3dat.vue";
+// import examrank from "@/components/rank_exam.vue";
+// import wikirank from "@/components/rank_knowledges.vue";
+// import cjrank from "@/components/rank_achievements.vue";
+// import collectionrank from "@/components/rank_collections.vue";
+// import namespacerank from "@/components/rank_namespaces.vue";
 
+import topic from "@/components/topic.vue";
 import newpost from "@/components/newpost.vue";
-import team from "@/components/team.vue";
-import guide from "@/components/guide.vue";
+// import team from "@/components/team.vue";
+// import guide from "@/components/guide.vue";
 
 import User from "@jx3box/jx3box-common/js/user";
 import { getProfile } from "@/service/user";
@@ -99,17 +103,19 @@ export default {
         servers,
         price,
 
-        cjrank,
-        macrorank,
-        jx3datrank,
-        wikirank,
-        collectionrank,
-        examrank,
-        namespacerank,
+        recommend,
+        // cjrank,
+        // macrorank,
+        // jx3datrank,
+        // wikirank,
+        // collectionrank,
+        // examrank,
+        // namespacerank,
 
+        topic,
         newpost,
-        team,
-        guide,
+        // team,
+        // guide,
     },
     created: function() {
         if (User.isLogin()) {
