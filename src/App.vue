@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <Header client="origin" :overlayEnable="true"></Header>
-        <bg />
+        <!-- <bg /> -->
         <div class="p-container">
             <div class="m-main">
                 <div class="m-primary">
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import Bg from "@/components/bg/Bg.vue";
+// import Bg from "@/components/bg/Bg.vue";
 import box from "@/components/box.vue";
 import notice from "@/components/notice.vue";
 import slider from "@/components/slider.vue";
@@ -89,7 +89,7 @@ export default {
     computed: {},
     methods: {},
     components: {
-        bg: Bg,
+        // bg: Bg,
         box,
         notice,
         slider,

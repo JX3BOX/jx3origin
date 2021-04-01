@@ -14,18 +14,13 @@ function getMenuGroups(params) {
     });
 }
 
-function getWikiPnt(type) {
-    return $helper({mute:true}).get("api/wiki/post/total", {
-        params: {
-            checked: "pending",
-            type: type,
-        },
-    });
+function getHelperPnt() {
+    return $helper({ mute: true }).get("/api/post/pending_total");
 }
 
 export {
     getConfig,
     getMenuGroup,
     getMenuGroups,
-    getWikiPnt,
+    getHelperPnt
 };

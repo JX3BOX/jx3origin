@@ -142,7 +142,7 @@ import draggable from "vuedraggable";
 import User from "@jx3box/jx3box-common/js/user";
 
 import { getMeta, setMeta } from "@/service/user.js";
-import { getWikiPnt } from "@/service/setting.js";
+import { getHelperPnt } from "@/service/setting.js";
 
 export default {
     name: "box",
@@ -334,23 +334,22 @@ export default {
             this.defined = true;
         },
         getPop: function() {
-            getWikiPnt("knowledge").then((res) => {
-                this.pop.knowledge = !!res.data.data.total;
-            });
-            getWikiPnt("achievement").then((res) => {
-                this.pop.cj = !!res.data.data.total;
-            });
-            getWikiPnt("item").then((res) => {
-                this.pop.item = !!res.data.data.total;
-            });
+            getHelperPnt().then((res) => {
+                let data = res.data.data
+                let team_count = 0
+                for(let key in data){
+                    if(key == 'achievement'){
+                        this.pop.cj += ~~data[key]
+                    }else if(key == 'team_events_record' || key == 'team_race'){
+                        this.pop.team = ~~this.pop.team + ~~data[key]
+                    }else if(key == 'team_verify_log'){
+                        this.pop.rank = ~~data[key]
+                    }else if(this.pop[key]){
+                        this.pop[key] = ~~data[key]
+                    }
+                }
+            })
         },
-    },
-    watch: {
-        // order: {
-        //     deep: true,
-        //     handler: function(val) {
-        //     },
-        // },
     },
     mounted: function() {
         this.initData();
