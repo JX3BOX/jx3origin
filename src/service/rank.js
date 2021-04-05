@@ -1,4 +1,4 @@
-import { $helper, $next } from "./axios";
+import { $next, $helper } from "@jx3box/jx3box-common/js/https";
 import { getStatRank } from "@jx3box/jx3box-common/js/stat.js";
 
 function getRank(type, days = "30days") {

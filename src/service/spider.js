@@ -1,24 +1,12 @@
-import { $spider, $team, axios } from "./axios";
-import { __server } from "@jx3box/jx3box-common/data/jx3box.json";
+import { $team } from "@jx3box/jx3box-common/js/https";
+import axios from "axios";
+import { __spider } from "@jx3box/jx3box-common/data/jx3box.json";
+const $spider = axios.create({ baseURL: __spider });
 
 function getDaily(date) {
     return $team({ mute: true }).get("/xoyo/daily/task", {
         params: {
             date: date, //int,时间戳，单位秒
-        },
-    });
-}
-
-function getGameNews() {
-    // return $spider.get("/jx3news").then((res) => {
-    //     return res.data;
-    // });
-
-    return axios.get(__server + "post/list", {
-        params: {
-            type: "bbs",
-            subtype: 6,
-            client: "origin",
         },
     });
 }
@@ -42,4 +30,4 @@ function getMeirentu(server = "蝶恋花") {
     });
 }
 
-export { getGameNews, getServers, getPrice, getMeirentu, getDaily };
+export { getServers, getPrice, getMeirentu, getDaily };

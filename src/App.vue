@@ -55,7 +55,7 @@ import slider from "@/components/slider.vue";
 import event from "@/components/event.vue";
 import live from "@/components/live.vue";
 import contact from "@/components/contact.vue";
-import activity from "@/components/activity.vue";
+// import activity from "@/components/activity.vue";
 
 import daily from "@/components/daily.vue";
 import jx3code from "@/components/jx3code.vue";
