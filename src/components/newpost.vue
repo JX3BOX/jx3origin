@@ -23,11 +23,12 @@
                 :href="postLink(item.post_type, item.ID)"
                 :target="target"
             >
-                <img
+                <el-image
                     class="u-avatar"
                     :src="item.author_info.user_avatar | showAvatar"
+                    fit="cover"
                     :alt="item.author_info.display_name"
-                />
+                ></el-image>
                 <div class="u-info">
                     <i class="el-icon-collection-tag"></i>
                     <span
@@ -105,19 +106,21 @@ export default {
                     slug: "bbs",
                 },
             ],
-            loading : false
+            loading: false,
         };
     },
     computed: {},
     methods: {
         loadData: function () {
-            let type = this.type == 'all' ? '' : this.type
-            this.loading = true
-            getPosts(type).then((res) => {
-                this.data = res.data.data.list;
-            }).finally(() => {
-                this.loading = false
-            })
+            let type = this.type == "all" ? "" : this.type;
+            this.loading = true;
+            getPosts(type)
+                .then((res) => {
+                    this.data = res.data.data.list;
+                })
+                .finally(() => {
+                    this.loading = false;
+                });
         },
     },
     filters: {
@@ -138,7 +141,7 @@ export default {
         },
     },
     mounted: function () {
-        this.loadData()
+        this.loadData();
     },
     components: {},
 };
