@@ -1,5 +1,5 @@
 <template>
-    <div class="m-topic m-sideblock">
+    <div class="m-topic m-sideblock" v-if="data && data.length">
         <div class="m-topic-header m-sideblock-header">
             <i class="el-icon-star-on"></i>
             <span class="u-title">热点专题</span>
