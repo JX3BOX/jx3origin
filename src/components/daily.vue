@@ -30,8 +30,8 @@
                 <tbody><tr><td colspan="3">
                     <div class="u-placeholder">
                         <p>❤️ 江湖又见，不负初心</p>
-                        <p>魔盒怀旧服交流群：<a href="https://jq.qq.com/?_wv=1027&k=mONxoPba" target="_blank">590349918</a></p>
-                        <p>官方怀旧服交流群：<a href="https://jq.qq.com/?_wv=1027&k=lBwsZ1aM" target="_blank">1061529946</a></p>
+                        <p>魔盒怀旧服交流群1：<a href="https://jq.qq.com/?_wv=1027&k=mONxoPba" target="_blank">590349918</a></p>
+                        <p>魔盒怀旧服交流群2：<a href="https://jq.qq.com/?_wv=1027&k=lBwsZ1aM" target="_blank">1061529946</a></p>
                     </div>
                 </td></tr></tbody>
                 <!-- <tbody>
