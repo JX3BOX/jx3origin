@@ -30,7 +30,7 @@
                     :open-delay="50"
                 >
                     <a
-                        :href="!options.disabled ? '' : item.href"
+                        :href="!options.disabled ? '' : getClientLink(item.href)"
                         :target="item.skip ? '_blank' : target"
                         class="u-item"
                         :class="{ 'u-doing': !item.status }"
@@ -350,6 +350,9 @@ export default {
                 }
             })
         },
+        getClientLink : function (val){
+            return val + '?client=origin'
+        }
     },
     mounted: function() {
         this.initData();
