@@ -13,6 +13,7 @@
                     <!-- <guide /> -->
                     <!-- TODO:表情 -->
                     <topic />
+                    <face />
                     <newpost />
                     <!-- TODO:剑三直播 -->
                     <!-- <team /> -->
@@ -78,6 +79,7 @@ import newpost from "@/components/newpost.vue";
 // import team from "@/components/team.vue";
 // import guide from "@/components/guide.vue";
 import joke from "@/components/joke.vue";
+import face from "@/components/face.vue";
 
 import User from "@jx3box/jx3box-common/js/user";
 import { getProfile } from "@/service/user";
@@ -119,6 +121,7 @@ export default {
         // team,
         // guide,
         joke,
+        face
     },
     created: function() {
         if (User.isLogin()) {
