@@ -351,7 +351,8 @@ export default {
             })
         },
         getClientLink : function (val){
-            return val + '?client=origin'
+            return val
+            // return val + '?client=origin'
         }
     },
     mounted: function() {
