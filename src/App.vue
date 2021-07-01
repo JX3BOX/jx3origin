@@ -87,7 +87,7 @@ import { getConfig } from "@/service/setting.js";
 export default {
     name: "App",
     props: [],
-    data: function() {
+    data: function () {
         return {};
     },
     computed: {},
@@ -121,9 +121,9 @@ export default {
         // team,
         // guide,
         joke,
-        face
+        face,
     },
-    created: function() {
+    created: function () {
         if (User.isLogin()) {
             getProfile().then((data) => {
                 if (data) {
@@ -142,6 +142,10 @@ export default {
             }
             this.$store.state.config = _data;
         });
+
+        if (location.hostname != 'localhost' && location.hostname != "origin.jx3box.com") {
+            location.href = "https://origin.jx3box.com/origin";
+        }
     },
 };
 </script>
