@@ -9,14 +9,20 @@
                     <slider />
                     <event />
                     <box />
-                    <joke />
-                    <!-- <guide /> -->
-                    <!-- TODO:表情 -->
-                    <topic />
-                    <face />
-                    <newpost />
-                    <!-- TODO:剑三直播 -->
-                    <!-- <team /> -->
+
+                    <div class="m-center">
+                        <joke />
+                        <transaction />
+
+                        <guide />
+                        <!-- TODO:剑三直播 -->
+
+                        <face />
+                        <newpost />
+
+                        <!-- TODO:表情 -->
+                        <team />
+                    </div>
 
                     <div class="m-left">
                         <daily />
@@ -30,15 +36,13 @@
 
                     <div class="m-right">
                         <notice />
-                        <recommend />
+                        <!-- <recommend /> -->
                         <!-- <cjrank /> -->
-                        <!-- <macrorank /> -->
-                        <!-- <jx3datrank /> -->
-                        <!-- TODO:DPS天梯 -->
-                        <!-- <wikirank /> -->
-                        <!-- <collectionrank /> -->
-                        <!-- <examrank /> -->
-                        <!-- <namespacerank /> -->
+                        <macrorank />
+                        <jx3datrank />
+                        <wikirank />
+                        <collectionrank />
+                        <examrank />
                         <contact />
                     </div>
 
@@ -63,23 +67,22 @@ import daily from "@/components/daily.vue";
 import jx3code from "@/components/jx3code.vue";
 import gamenews from "@/components/gamenews.vue";
 import servers from "@/components/servers.vue";
-// import price from "@/components/price.vue";
+import price from "@/components/price.vue";
 
-import recommend from "@/components/recommend.vue";
-// import macrorank from "@/components/rank_macro.vue";
-// import jx3datrank from "@/components/rank_jx3dat.vue";
-// import examrank from "@/components/rank_exam.vue";
-// import wikirank from "@/components/rank_knowledges.vue";
-// import cjrank from "@/components/rank_achievements.vue";
-// import collectionrank from "@/components/rank_collections.vue";
-// import namespacerank from "@/components/rank_namespaces.vue";
+import macrorank from "@/components/rank_macro.vue";
+import jx3datrank from "@/components/rank_jx3dat.vue";
+import examrank from "@/components/rank_exam.vue";
+import wikirank from "@/components/rank_knowledges.vue";
+import cjrank from "@/components/rank_achievements.vue";
+import collectionrank from "@/components/rank_collections.vue";
+import namespacerank from "@/components/rank_namespaces.vue";
 
-import topic from "@/components/topic.vue";
 import newpost from "@/components/newpost.vue";
-// import team from "@/components/team.vue";
-// import guide from "@/components/guide.vue";
+import team from "@/components/team.vue";
+import guide from "@/components/guide.vue";
 import joke from "@/components/joke.vue";
 import face from "@/components/face.vue";
+import transaction from "@/components/transaction.vue";
 
 import User from "@jx3box/jx3box-common/js/user";
 import { getProfile } from "@/service/user";
@@ -107,21 +110,20 @@ export default {
         servers,
         // price,
 
-        recommend,
         // cjrank,
-        // macrorank,
-        // jx3datrank,
-        // wikirank,
-        // collectionrank,
-        // examrank,
+        macrorank,
+        jx3datrank,
+        wikirank,
+        collectionrank,
+        examrank,
         // namespacerank,
 
-        topic,
         newpost,
-        // team,
-        // guide,
+        team,
+        guide,
         joke,
         face,
+        transaction,
     },
     created: function () {
         if (User.isLogin()) {
@@ -143,7 +145,10 @@ export default {
             this.$store.state.config = _data;
         });
 
-        if (location.hostname != 'localhost' && location.hostname != "origin.jx3box.com") {
+        if (
+            location.hostname != "localhost" &&
+            location.hostname != "origin.jx3box.com"
+        ) {
             location.href = "https://origin.jx3box.com/origin";
         }
     },

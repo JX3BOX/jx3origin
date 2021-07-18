@@ -53,6 +53,7 @@ function getJx3datRank(limit = 10) {
     return $next({mute:true}).get("/api/plugins/jx3dat/rank", {
         params: {
             pageSize: limit,
+            client : 'origin'
         },
     });
 }
@@ -61,6 +62,7 @@ function getMacroRank(limit = 10) {
     return $next({mute:true}).get("/api/macro/overview", {
         params: {
             size: limit,
+            client : 'origin'
             // _no_cache:1,
         },
     });

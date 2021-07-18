@@ -8,6 +8,10 @@
         .ml(4px);
         .y;
     }
+
+    .el-icon-guide{
+        .fz(16px);
+    }
 }
 @media screen and (max-width:@phone){
     .m-guide{
@@ -18,6 +22,14 @@
 .m-guide-content{
     .el-col,.el-row{
         .h(100%);
+    }
+}
+.m-guide-bps{
+    display: flex;
+
+    .u-guide-rank{
+        .w(300px);
+        flex-shrink: 0;
     }
 }
 @media screen and (max-width:@phone){
@@ -62,32 +74,25 @@
         .fl;
         .mb(7px);
         min-width:30%;
-        span{
+        .u-remark{
             color:#888;
             .ml(5px);
             .fz(12px);
+        }
+        img{
+            .y;
+            .size(18px);
+            .r(2px);
+            .mr(5px);
         }
     }
 
     &.u-guide-bps{
         border-bottom:none;
+        flex-grow:1;
         a{
             min-width:25%;
         }
-
-        // .new{
-        //     &:after{
-        //         content:"NEW";
-        //         .dbi;padding:2px 5px;
-        //         background-color:#49c10f;
-        //         color:#fff;
-        //         .fz(12px,16px);
-        //         .ml(3px);
-        //         .r(2px);
-        //         transform: scale(0.82);
-        //         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        //     }
-        // }
 
         i{
             .dbi;.size(18px);.y;
@@ -98,9 +103,15 @@
     }
     &.u-guide-other{
         border-bottom:none;
+        border-right: none;
         a{
-            min-width:50%;
+            // .db;
+            float:none;
         }
+    }
+
+    .u-border-top-none{
+        border-top:none;
     }
 
     a:hover{
@@ -119,5 +130,49 @@
     .u-guide-block a{
         .nobreak;
         .w(100%);
+    }
+}
+
+.u-guide-rank{
+    ul {
+        list-style: none;
+        padding: 15px 0 10px 5px;
+        margin: 0;
+        .ml(30px);
+    }
+    .u-title a{
+        float:none;
+        margin:0;
+    }
+    .u-item {
+        .db;
+        .fz(12px, 14px);
+        .mb(8px);
+        color: #fff;
+        .pr;
+        .r(2px);
+    }
+    .u-pic {
+        .size(20px);
+        .y;
+        .mr(5px);
+        .pa;
+        .lt(-25px, 0);
+    }
+    .u-text {
+        padding: 2px 8px;
+        .db;
+        .bold;
+    }
+    .u-desc{
+        // .fr;
+        color:#eee;
+        .ml(5px);
+        font-weight: normal;
+    }
+
+    .u-dps{
+        .pa;.rb(5px,0);
+        .fz(12px,18px);
     }
 }

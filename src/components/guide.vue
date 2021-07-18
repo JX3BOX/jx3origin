@@ -1,191 +1,112 @@
 <template>
     <div class="m-guide m-sideblock">
         <div class="m-guide-header m-sideblock-header">
-            <i class="el-icon-guide"></i>
-            <span class="u-title">游戏指南</span>
-            <a
-                href="/bps"
-                class="u-more"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="查看全部"
-                ><i class="el-icon-more"></i
-            ></a>
+            <i class="el-icon-discover"></i>
+            <span class="u-title">门派指南</span>
+            <a href="/bps" class="u-more" target="_blank" rel="noopener noreferrer" title="查看全部">
+                <i class="el-icon-more"></i>
+            </a>
         </div>
-        <div class="m-guide-content">
-            <el-row>
-                <el-col :span="8">
-                    <div class="u-guide-block u-guide-pve">
-                        <!-- PVE -->
-                        <template v-if="menu_groups['guide-pve']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-pve"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-pve'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
+        <div class="m-guide-content m-guide-bps">
+            <div class="u-guide-block u-guide-bps">
+                <!-- 110级 - 全门派指南 -->
+                <template v-if="menu_groups['guide-bps-kungfu-origin']">
+                    <h5
+                        class="u-title u-border-top-none"
+                    >全门派指南</h5>
+                    <div class="u-list">
+                        <a
+                            v-for="(menu, key) in menu_groups[
+                                'guide-bps-kungfu-origin'
+                            ].menus"
+                            :key="key"
+                            :href="menu.link"
+                            target="_blank"
+                            :style="{color:menu.color}"
+                        >
+                            <img :src="menu.icon | xfIcon" />
+                            <template v-if="menu.color">
+                                <b v-html="menu.label"></b>
+                            </template>
+                            <template v-else>
+                                <span v-html="menu.label"></span>
+                            </template>
+                        </a>
                     </div>
-                </el-col>
-                <el-col :span="8">
-                    <div class="u-guide-block u-guide-pve">
-                        <!-- PVX -->
-                        <template v-if="menu_groups['guide-pvx']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-pvx"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-pvx'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-                    </div>
-                </el-col>
-                <el-col :span="8">
-                    <div class="u-guide-block u-guide-pvp">
-                        <!-- PVP -->
-                        <template v-if="menu_groups['guide-pvp']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-pvp"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-pvp'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-                    </div>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="16">
-                    <div class="u-guide-block u-guide-bps">
-                        <!-- 110级 - 全门派指南 -->
-                        <template v-if="menu_groups['guide-bps-kungfu']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-bps-kungfu"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-bps-kungfu'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-
-                        <!-- 特效武器大全 -->
-                        <template v-if="menu_groups['guide-bps-weapon']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-bps-weapon"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-bps-weapon'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-                    </div>
-                </el-col>
-                <el-col :span="8">
-                    <div class="u-guide-block u-guide-other">
-                        <!-- 成就 -->
-                        <template v-if="menu_groups['awesome-achievements']">
-                            <h5 class="u-title">
-                                {{ menu_groups["awesome-achievements"].label }}
-                                <img src="../assets/img/new2.gif" />
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'awesome-achievements'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-                        <!-- 通用 -->
-                        <template v-if="menu_groups['guide-other']">
-                            <h5 class="u-title">
-                                {{ menu_groups["guide-other"].label }}
-                            </h5>
-                            <div class="u-list">
-                                <a
-                                    v-for="(menu, key) in menu_groups[
-                                        'guide-other'
-                                    ].menus"
-                                    :key="key"
-                                    :href="menu.link"
-                                    target="_blank"
-                                    v-html="menu.label"
-                                ></a>
-                            </div>
-                        </template>
-                    </div>
-                </el-col>
-            </el-row>
+                </template>
+            </div>
+            <div class="u-guide-block u-guide-rank">
+                <h5 class="u-title u-border-top-none">
+                    <a href="/bps/#/ladder" target="_blank">
+                        <i class="el-icon-s-data"></i>
+                        门派天梯
+                    </a>
+                </h5>
+                <ul>
+                    <li v-for="(item, i) in rank" :key="i">
+                        <div
+                            class="u-item"
+                            :style="{
+                            width: getRate(item.dps),
+                            backgroundColor: xfcolor(item.xf),
+                        }"
+                            v-if="!~~item.icon"
+                        >
+                            <img :src="item.xf | xfNameIcon" class="u-pic" />
+                            <span class="u-text">
+                                {{ item.xf }}
+                            </span>
+                            <b class="u-dps">{{item.dps}}</b>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import { getMenuGroups } from "@/service/setting";
-
+import { getSchoolRank } from "@/service/helper";
+import { __imgPath } from "@jx3box/jx3box-common/data/jx3box.json";
+import xfmap from "@jx3box/jx3box-data/data/xf/xf.json";
 export default {
     name: "guide",
     props: [],
-    data: function() {
+    data: function () {
         return {
             menu_groups: {},
+            data: [],
+            v: "wuhuatianbao", //物华天宝
         };
     },
-    computed: {},
-    methods: {},
+    computed: {
+        maxBase: function () {
+            let arr = [];
+            this.rank.forEach((item) => {
+                arr.push(item.dps);
+            });
+            return ~~Math.max(...arr);
+        },
+        rank : function (){
+            let data = this.data
+            data.sort((a,b) => {
+                return ~~(b.dps) - ~~(a.dps)
+            })
+            return data
+        }
+    },
+    methods: {
+        xfcolor: function (val) {
+            return xfmap[val]["color"];
+        },
+        getRate: function (val) {
+            return ((val / this.maxBase) * 100).toFixed(2) + "%";
+        },
+    },
     mounted() {
         getMenuGroups({
-            names: [
-                "guide-pve",
-                "guide-pvx",
-                "guide-pvp",
-                "guide-bps-kungfu",
-                "guide-bps-weapon",
-                "guide-other",
-                "awesome-achievements"
-            ],
+            names: ["guide-bps-kungfu-origin"],
         }).then((res) => {
             let data = res.data;
             if (data.code === 200) {
@@ -197,6 +118,18 @@ export default {
                 this.menu_groups = output;
             }
         });
+
+        getSchoolRank(this.v).then((res) => {
+            this.data = res.data.data.group.items || [];
+        });
+    },
+    filters: {
+        xfIcon: function (val) {
+            return __imgPath + "/image/xf/" + val + ".png";
+        },
+        xfNameIcon: function (val) {
+            return __imgPath + "image/xf/" + xfmap[val]["id"] + ".png";
+        },
     },
     components: {},
 };
