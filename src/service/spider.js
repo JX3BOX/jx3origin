@@ -30,4 +30,14 @@ function getMeirentu(server = "蝶恋花") {
     });
 }
 
-export { getServers, getPrice, getMeirentu, getDaily };
+function getGameNews() {
+    return $spider.get("/jx3news",{
+        params : {
+            client : 'origin'
+        }
+    }).then((res) => {
+        return res.data;
+    });
+}
+
+export { getServers, getPrice, getMeirentu, getDaily,getGameNews };

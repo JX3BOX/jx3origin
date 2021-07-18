@@ -23,7 +23,7 @@
                         <jx3code />
                         <gamenews />
                         <servers />
-                        <price />
+                        <!-- <price /> -->
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
                     </div>
@@ -63,7 +63,7 @@ import daily from "@/components/daily.vue";
 import jx3code from "@/components/jx3code.vue";
 import gamenews from "@/components/gamenews.vue";
 import servers from "@/components/servers.vue";
-import price from "@/components/price.vue";
+// import price from "@/components/price.vue";
 
 import recommend from "@/components/recommend.vue";
 // import macrorank from "@/components/rank_macro.vue";
@@ -105,7 +105,7 @@ export default {
         jx3code,
         gamenews,
         servers,
-        price,
+        // price,
 
         recommend,
         // cjrank,
