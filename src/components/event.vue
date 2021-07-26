@@ -26,19 +26,24 @@ export default {
         };
     },
     computed: {
+        player_status: function() {
+            return (
+                this.$store.state.config.index_live_status ||
+                this.$store.state.config.index_video_status
+            );
+        },
         event_status: function() {
-            return false
             return ~~this.$store.state.config.event_status;
         },
     },
     methods: {},
     beforeCreate: function() {
         getSliders("event", 10).then((res) => {
-            let data = res.data.data
+            let data = res.data.data;
             data.forEach((item) => {
                 item.img = resolveImagePath(item.img);
             });
-            this.data = data.slice(0,6);
+            this.data = data.slice(0, 6);
         });
     },
     // updated: function() {
