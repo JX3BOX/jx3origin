@@ -59,7 +59,7 @@
 <script>
 import { getPosts } from "@/service/index";
 import {
-    postLink,
+    getLink,
     buildTarget,
     authorLink,
     showAvatar,
@@ -76,7 +76,6 @@ export default {
     data: function () {
         return {
             data: [],
-            postLink,
             target: buildTarget(),
             authorLink,
             type: "all",
@@ -122,6 +121,9 @@ export default {
                     this.loading = false;
                 });
         },
+        postLink : function (type,id){
+            return getLink(type,id)
+        }
     },
     filters: {
         formatTypeName: function (type) {
