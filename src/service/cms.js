@@ -13,7 +13,7 @@ function getCode() {
 
 function getNews(type, limit) {
     let _params = {
-        client: CLIENT,
+        client: 'std',
         type: type,
         status: 1,
     };
