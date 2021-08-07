@@ -36,6 +36,7 @@
 
                     <div class="m-right">
                         <notice />
+                        <gossip />
                         <!-- <recommend /> -->
                         <!-- <cjrank /> -->
                         <macrorank />
@@ -57,6 +58,7 @@
 // import Bg from "@/components/bg/Bg.vue";
 import box from "@/components/box.vue";
 import notice from "@/components/notice.vue";
+import gossip from "@/components/gossip.vue";
 import slider from "@/components/slider.vue";
 import event from "@/components/event.vue";
 import live from "@/components/live.vue";
@@ -99,6 +101,7 @@ export default {
         // bg: Bg,
         box,
         notice,
+        gossip,
         slider,
         event,
         live,
