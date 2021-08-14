@@ -14,6 +14,7 @@
                         <joke />
                         <transaction />
 
+                        <team />
                         <guide />
                         <!-- TODO:剑三直播 -->
 
@@ -21,7 +22,6 @@
                         <newpost />
 
                         <!-- TODO:表情 -->
-                        <team />
                     </div>
 
                     <div class="m-left">
@@ -29,7 +29,8 @@
                         <jx3code />
                         <gamenews />
                         <servers />
-                        <feedback />
+                        <!-- TODO: 快速反馈先不上 -->
+                        <!-- <feedback /> -->
                         <!-- <price /> -->
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
@@ -113,7 +114,7 @@ export default {
         jx3code,
         gamenews,
         servers,
-        feedback,
+        // feedback,
         // price,
 
         // cjrank,

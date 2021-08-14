@@ -120,7 +120,7 @@ export default {
         });
 
         getSchoolRank(this.v).then((res) => {
-            this.data = res.data.data.group.items || [];
+            this.data = res.data?.data?.group?.items || [];
         });
     },
     filters: {
