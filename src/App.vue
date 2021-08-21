@@ -42,7 +42,7 @@
                         <!-- <recommend /> -->
                         <!-- <cjrank /> -->
                         <macrorank />
-                        <jx3datrank />
+                        <!-- <jx3datrank /> -->
                         <wikirank />
                         <collectionrank />
                         <examrank />
@@ -119,7 +119,7 @@ export default {
 
         // cjrank,
         macrorank,
-        jx3datrank,
+        // jx3datrank,
         wikirank,
         collectionrank,
         examrank,
