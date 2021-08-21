@@ -21,7 +21,7 @@
                     class="u-post"
                     v-for="(item, i) in data"
                     :key="i"
-                    :href="getLink(item.type,item.id)"
+                    :href="getLink(item.type,item.source_id)"
                     :target="target"
                 >
                     <el-image class="u-avatar" :src="(item.user_avatar) | showAvatar" fit="cover"></el-image>
