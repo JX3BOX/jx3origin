@@ -130,7 +130,7 @@ const default_data = [];
 _.each(origin, (val, uuid) => {
     default_data.push(origin[uuid]);
 });
-const default_lf = ["database", "team"];
+const default_lf = ["database", "team","keju"];
 let default_order = [];
 _.each(default_data, (item) => {
     default_order.push(item.uuid);
