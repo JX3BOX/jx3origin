@@ -29,8 +29,7 @@
                         <jx3code />
                         <gamenews />
                         <servers />
-                        <!-- TODO: 快速反馈先不上 -->
-                        <!-- <feedback /> -->
+                        <feedback />
                         <!-- <price /> -->
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
@@ -114,7 +113,7 @@ export default {
         jx3code,
         gamenews,
         servers,
-        // feedback,
+        feedback,
         // price,
 
         // cjrank,
