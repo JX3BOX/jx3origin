@@ -1,49 +1,6 @@
 <template>
     <div class="m-index-recruit m-sideblock">
         <el-tabs v-model="tab" class="u-recruit-tab">
-            <el-tab-pane label="活动大厅" name="hall">
-                <div slot="label">
-                    <i class="el-icon-date"></i> 活动大厅
-                </div>
-                <div class="m-index-board" v-if="tab === 'hall'">
-                    <div class="m-team-list-header">
-                        <el-select
-                            class="u-server u-select u-filter"
-                            v-model="server"
-                            placeholder="选择服务器"
-                            size="mini"
-                            filterable
-                        >
-                            <el-option key="all" label="全部服务器" value></el-option>
-                            <el-option
-                                v-for="item in servers"
-                                :key="item"
-                                :label="item"
-                                :value="item"
-                            ></el-option>
-                        </el-select>
-                        <el-input
-                            class="u-name u-filter"
-                            v-model="raidName"
-                            placeholder="查找活动"
-                            size="mini"
-                        >
-                            <i class="el-icon-search" slot="append" @click="loadRaids"></i>
-                        </el-input>
-                        <a
-                            class="u-more el-button el-button--primary is-plain el-button--mini"
-                            href="/team/raid/list"
-                            target="_blank"
-                        >查看更多&raquo;</a>
-                    </div>
-                    <div v-loading="raidLoading">
-                        <template v-if="raidData && raidData.length">
-                            <raid-list :data="raidData" time="全部" :isIndex="true" />
-                        </template>
-                        <el-alert v-else title="没有找到符合条件的记录" type="info" show-icon></el-alert>
-                    </div>
-                </div>
-            </el-tab-pane>
             <el-tab-pane name="recruit">
                 <div slot="label">
                     <i class="el-icon-data-analysis"></i> 团队招募
@@ -126,6 +83,49 @@
                     <i class="el-icon-d-arrow-right"></i> 查看更多
                 </a>
             </el-tab-pane>
+            <el-tab-pane label="活动大厅" name="hall">
+                <div slot="label">
+                    <i class="el-icon-date"></i> 活动大厅
+                </div>
+                <div class="m-index-board" v-if="tab === 'hall'">
+                    <div class="m-team-list-header">
+                        <el-select
+                            class="u-server u-select u-filter"
+                            v-model="server"
+                            placeholder="选择服务器"
+                            size="mini"
+                            filterable
+                        >
+                            <el-option key="all" label="全部服务器" value></el-option>
+                            <el-option
+                                v-for="item in servers"
+                                :key="item"
+                                :label="item"
+                                :value="item"
+                            ></el-option>
+                        </el-select>
+                        <el-input
+                            class="u-name u-filter"
+                            v-model="raidName"
+                            placeholder="查找活动"
+                            size="mini"
+                        >
+                            <i class="el-icon-search" slot="append" @click="loadRaids"></i>
+                        </el-input>
+                        <a
+                            class="u-more el-button el-button--primary is-plain el-button--mini"
+                            href="/team/raid/list"
+                            target="_blank"
+                        >查看更多&raquo;</a>
+                    </div>
+                    <div v-loading="raidLoading">
+                        <template v-if="raidData && raidData.length">
+                            <raid-list :data="raidData" time="全部" :isIndex="true" />
+                        </template>
+                        <el-alert v-else title="没有找到符合条件的记录" type="info" show-icon></el-alert>
+                    </div>
+                </div>
+            </el-tab-pane>
         </el-tabs>
         <div class="u-misc">
             <a href="/team/org/add" class="u-more" target="_blank" rel="noopener noreferrer">
@@ -190,7 +190,7 @@ export default {
             tags,
             tag: "",
             isVerified: false,
-            tab: "hall", // 招募
+            tab: "recruit", // 招募
 
             raidName: "战宝",
             raidData: [],

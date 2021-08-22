@@ -13,8 +13,6 @@
                     <div class="m-center">
                         <joke />
                         <transaction />
-
-                        <team />
                         <guide />
                         <!-- TODO:剑三直播 -->
 
@@ -22,6 +20,7 @@
                         <newpost />
 
                         <!-- TODO:表情 -->
+                        <team />
                     </div>
 
                     <div class="m-left">
@@ -39,13 +38,13 @@
                     <div class="m-right">
                         <notice />
                         <gossip />
-                        <!-- <recommend /> -->
+                        <recommend />
                         <!-- <cjrank /> -->
                         <macrorank />
                         <!-- <jx3datrank /> -->
-                        <wikirank />
                         <collectionrank />
                         <examrank />
+                        <wikirank />
                         <contact />
                     </div>
 
@@ -81,6 +80,7 @@ import wikirank from "@/components/rank_knowledges.vue";
 import cjrank from "@/components/rank_achievements.vue";
 import collectionrank from "@/components/rank_collections.vue";
 import namespacerank from "@/components/rank_namespaces.vue";
+import recommend from "@/components/recommend.vue";
 
 import newpost from "@/components/newpost.vue";
 import team from "@/components/team.vue";
@@ -124,6 +124,7 @@ export default {
         collectionrank,
         examrank,
         // namespacerank,
+        recommend,
 
         newpost,
         team,
