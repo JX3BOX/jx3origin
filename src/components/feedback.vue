@@ -144,6 +144,9 @@ export default {
         // 提交反馈
         publish: function () {
             if (!this.isLogin) {
+                if (this.post.post_content) {
+                    localStorage.setItem('feedback', this.post.post_content);
+                }
                 User.toLogin();
                 return
             }
@@ -181,6 +184,14 @@ export default {
                     this.processing = false;
                 });
         },
+        loadCache: function (){
+            const content = localStorage.getItem('feedback') || '';
+            this.post.post_content = content;
+            localStorage.removeItem('feedback');
+        }
+    },
+    mounted: function (){
+        this.loadCache()
     }
 }
 </script>
