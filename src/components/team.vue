@@ -190,7 +190,7 @@ export default {
             tags,
             tag: "",
             isVerified: false,
-            tab: "recruit", // 招募
+            tab: "hall", // 招募
 
             raidName: "战宝",
             raidData: [],
