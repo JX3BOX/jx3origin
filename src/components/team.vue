@@ -220,6 +220,7 @@ export default {
                 time: -1,
                 per: 20,
                 is_public: 1,
+                client: "origin",
             };
             return params;
         },
