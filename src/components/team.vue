@@ -16,7 +16,7 @@
                         >
                             <el-option key="all" label="全部" value></el-option>
                             <el-option
-                                v-for="item in servers"
+                                v-for="item in serversWithClient"
                                 :key="item"
                                 :label="item"
                                 :value="item"
@@ -98,7 +98,7 @@
                         >
                             <el-option key="all" label="全部服务器" value></el-option>
                             <el-option
-                                v-for="item in servers"
+                                v-for="item in serversWithClient"
                                 :key="item"
                                 :label="item"
                                 :value="item"
@@ -152,6 +152,7 @@ import lodash from "lodash";
 import { showTime, showRecently } from "@/utils/moment.js";
 import { getTeams, searchRaids } from "@/service/index.js";
 import servers from "@jx3box/jx3box-data/data/server/server_list.json";
+import serverMap from "@jx3box/jx3box-data/data/server/server_map.json";
 import tags from "@/assets/data/team_tags.json";
 import RaidList from "./raid_list.vue";
 export default {
@@ -228,6 +229,20 @@ export default {
                 recruit: this.loadTeams,
             };
         },
+        client: function (){
+            return this.$store.state.client
+        },
+        serversWithClient: function () {
+            const _servers = []
+
+            for (let name in serverMap) {
+                if (serverMap[name].client === this.client) {
+                    _servers.push(name)
+                }
+            }
+
+            return _servers
+        }
     },
     methods: {
         loadTeams: function () {

@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 let store = {
     state: {
+        client: 'origin',
         profile: {
             server: "蝶恋花",
         },
