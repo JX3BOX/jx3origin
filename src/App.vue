@@ -29,7 +29,7 @@
                         <jx3code />
                         <gamenews />
                         <servers />
-                        <feedback v-if="!isMobile"/>
+                        <!-- <feedback v-if="!isMobile"/> -->
                         <!-- <price /> -->
                         <!-- TODO:账号同步工具 -->
                         <!-- TODO:APP下载 -->
@@ -38,7 +38,7 @@
                     <div class="m-right">
                         <notice />
                         <gossip />
-                        <recommend />
+                        <!-- <recommend /> -->
                         <!-- <cjrank /> -->
                         <macrorank />
                         <!-- <jx3datrank /> -->
@@ -117,7 +117,7 @@ export default {
         jx3code,
         gamenews,
         servers,
-        feedback,
+        // feedback,
         // price,
 
         // cjrank,
@@ -127,7 +127,7 @@ export default {
         collectionrank,
         examrank,
         // namespacerank,
-        recommend,
+        // recommend,
 
         newpost,
         team,
