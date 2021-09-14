@@ -18,12 +18,12 @@
                 <el-col :span="8">
                     <div class="u-guide-block u-guide-pve">
                         <!-- PVE -->
-                        <template v-if="menu_groups['guide-pve']">
-                            <h5 class="u-title">{{ menu_groups["guide-pve"].label }}</h5>
+                        <template v-if="menu_groups['origin-guide-pve']">
+                            <h5 class="u-title">PVE</h5>
                             <div class="u-list">
                                 <a
                                     v-for="(menu, key) in menu_groups[
-                                        'guide-pve'
+                                        'origin-guide-pve'
                                     ].menus"
                                     :key="key"
                                     :href="menu.link"
@@ -37,12 +37,12 @@
                 <el-col :span="8">
                     <div class="u-guide-block u-guide-pve">
                         <!-- PVX -->
-                        <template v-if="menu_groups['guide-pvx']">
-                            <h5 class="u-title">{{ menu_groups["guide-pvx"].label }}</h5>
+                        <template v-if="menu_groups['origin-guide-pvx']">
+                            <h5 class="u-title">PVX</h5>
                             <div class="u-list">
                                 <a
                                     v-for="(menu, key) in menu_groups[
-                                        'guide-pvx'
+                                        'origin-guide-pvx'
                                     ].menus"
                                     :key="key"
                                     :href="menu.link"
@@ -56,12 +56,12 @@
                 <el-col :span="8">
                     <div class="u-guide-block u-guide-pvp">
                         <!-- PVP -->
-                        <template v-if="menu_groups['guide-pvp']">
-                            <h5 class="u-title">{{ menu_groups["guide-pvp"].label }}</h5>
+                        <template v-if="menu_groups['origin-guide-pvp']">
+                            <h5 class="u-title">PVP</h5>
                             <div class="u-list">
                                 <a
                                     v-for="(menu, key) in menu_groups[
-                                        'guide-pvp'
+                                        'origin-guide-pvp'
                                     ].menus"
                                     :key="key"
                                     :href="menu.link"
@@ -180,7 +180,7 @@
                         <template v-if="menu_groups['awesome-achievements-origin']">
                             <h5
                                 class="u-title"
-                            >{{ menu_groups["awesome-achievements-origin"].label }}</h5>
+                            >热点专题</h5>
                             <div class="u-list">
                                 <a
                                     v-for="(menu, key) in menu_groups[
@@ -310,9 +310,9 @@ export default {
         loadGuide: function () {
             getMenuGroups({
                 names: [
-                    "guide-pve",
-                    "guide-pvx",
-                    "guide-pvp",
+                    "origin-guide-pve",
+                    "origin-guide-pvx",
+                    "origin-guide-pvp",
                     "awesome-achievements-origin",
                 ],
             }).then((res) => {

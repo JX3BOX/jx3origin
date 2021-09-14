@@ -1,11 +1,13 @@
 <template>
     <div class="m-index-transaction m-sideblock">
         <div class="m-sideblock-header">
-            <i class="el-icon-coin"></i>
-            <span class="u-title">全服交易行</span>
+            <span class="u-title"><i class="el-icon-coin"></i> 全服交易行</span>
             <el-select class="u-server" v-model="server" placeholder="请选择服务器" size="mini">
                 <el-option v-for="serve in servers" :key="serve" :label="serve" :value="serve"></el-option>
             </el-select>
+            <el-input class="u-search" placeholder="请输入内容" v-model="search" size="mini" @keyup.enter.native="goItemPage">
+                <el-button slot="append" icon="el-icon-search" @click="goItemPage"></el-button>
+            </el-input>
             <a href="/item" class="u-more" target="_blank" rel="noopener noreferrer" title="查看全部">
                 <i class="el-icon-more"></i>
             </a>
@@ -63,7 +65,7 @@
 </template>
 
 <script>
-import servers from "@jx3box/jx3box-data/data/server/server_cn.json";
+import servers from "@jx3box/jx3box-data/data/server/server_origin.json";
 import GamePrice from "./GamePrice.vue";
 import User from "@jx3box/jx3box-common/js/user";
 import { getItemPrice } from "@/service/helper.js";
@@ -77,8 +79,9 @@ export default {
     data: function () {
         return {
             groups: [],
-            server: "蝶恋花",
+            server: "缘起稻香",
             servers: servers,
+            search : ''
         };
     },
     methods: {
@@ -86,9 +89,9 @@ export default {
             getItemPrice({
                 server: this.server,
                 keys: [
-                    "index1",
-                    "index2",
-                    "teshucailiao"
+                    "origin1",
+                    "origin2",
+                    "origin3"
                 ],
             }).then((data) => {
                 data = data.data;
@@ -96,6 +99,10 @@ export default {
                     this.groups = Object.values(data.data.data) || [];
             });
         },
+        goItemPage : function (){
+            let host = location.origin
+            window.open(`${host}/item/#/search/${this.search}?page=1`,'_blank')
+        }
     },
     watch: {
         server: {
@@ -106,9 +113,9 @@ export default {
         },
     },
     mounted: function () {
-        if (User.isLogin()) {
-            this.server = this.$store.state.server || '蝶恋花';
-        }
+        // if (User.isLogin()) {
+        //     this.server = this.$store.state.server || '蝶恋花';
+        // }
     },
     filters : {
         iconLink,

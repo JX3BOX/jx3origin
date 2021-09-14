@@ -12,9 +12,11 @@
 
                     <div class="m-center">
                         <joke />
+                        <transaction />
+                        
                         <team />
                         
-                        <transaction />
+                        
                         <guide />
                         <!-- TODO:剑三直播 -->
 

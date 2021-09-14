@@ -20,6 +20,7 @@
                     'u-lf': isLF(item.uuid),
                     hidden: !canSee(item.uuid),
                 }"
+                v-show="item.status"
             >
                 <el-tooltip
                     class="item"
@@ -130,7 +131,7 @@ const default_data = [];
 _.each(origin, (val, uuid) => {
     default_data.push(origin[uuid]);
 });
-const default_lf = ["database", "team","keju"];
+const default_lf = ["database", "team","j3pz"];
 let default_order = [];
 _.each(default_data, (item) => {
     default_order.push(item.uuid);
